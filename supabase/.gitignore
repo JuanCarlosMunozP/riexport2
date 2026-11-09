@@ -1,0 +1,11 @@
+# Supabase
+.branches
+.temp
+
+# dotenvx
+.env.keys
+.env.local
+.env.*.local
+
+# Copia generada por database/scripts/sync-supabase.ps1 (la fuente es database/migrations)
+migrations/
