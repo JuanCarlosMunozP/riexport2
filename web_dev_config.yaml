@@ -1,0 +1,6 @@
+server:
+  host: localhost
+  port: 5000
+  https:
+    cert-path: .certs-local/localhost.pem
+    cert-key-path: .certs-local/localhost-key.pem
