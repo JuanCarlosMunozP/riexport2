@@ -1,0 +1,28 @@
+name: riexport_app
+description: "Cliente Flutter de la plataforma RiExport."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.10.4
+
+dependencies:
+  file_picker: ^13.3.0
+  flutter:
+    sdk: flutter
+  flutter_map: ^8.3.2
+  flutter_secure_storage: 11.2.0
+  go_router: 16.3.0
+  http: 1.6.0
+  latlong2: ^0.10.1
+  provider: 6.1.5+1
+  url_launcher: ^6.3.2
+
+dev_dependencies:
+  postgres: ^3.5.0
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
