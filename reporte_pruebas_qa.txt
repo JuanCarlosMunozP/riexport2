@@ -1,0 +1,210 @@
+==============================================================================
+ REPORTE DE PRUEBAS QA - Plataforma de exportacion cafe/cacao (riexport_app)  pruebas
+==============================================================================
+Fecha: 2026-11-13
+Alcance: backend (Dart: LocalBackendClient, SupabaseBackendClient, ApiClient,
+         sesion; SQL: migraciones + RLS en PostgreSQL 16 via Docker) y
+         frontend (Flutter: pantallas, router, formularios, estado).
+
+1. ENTORNO
+------------------------------------------------------------------------------
+- Flutter/Dart: flutter test --coverage (coverage/lcov.info)
+- Docker: contenedor qa_pg (postgres:16-alpine), BDs riexport_qa y riexport_base
+  con migraciones completas y stubs de Supabase (auth/storage).
+- Artefactos de trabajo: carpeta .qa_tmp/ (resultados SQL sql_*.out, logs
+  full_run*.log, lcov*.info, cov_final.txt, inventory.txt).
+- Codigo de produccion modificado solo para corregir defectos: login_screen.dart (QA-03)
+  e inventory_screen.dart (QA-02). Prueba SQL corregida: verify_schema.sql (QA-01).
+
+2. RESULTADO GLOBAL
+------------------------------------------------------------------------------
+- Pruebas Flutter ejecutadas (corrida completa): 474  -> TODAS APROBADAS
+- Cobertura de lineas (lib/): 10261 / 10499 = 97.7 %  (inicio: 84.1 %)
+- Archivos de prueba: 52 (listado con conteo en seccion 5)
+- Pruebas SQL: 15 scripts en database/tests ejecutados contra las BDs Docker
+  (salidas en .qa_tmp/sql_*.out). verify_schema.sql: 0 fallas tras QA-01.
+
+
+3. PRUEBAS NUEVAS AGREGADAS EN ESTA SESION
+------------------------------------------------------------------------------
+Backend:
+- test/core/core_extra_test.dart: ApiClient (idempotencia, timeout, error de
+  conexion, respuesta invalida, errores 422/401), ApiConfig, AuthSession
+  (restaurar/expirar/limpiar), SecureSessionTokenStore, shipmentIdOf.
+- test/backend/local_backend_validation_fuzz_test.dart: fuzz por mutacion de
+  entradas sobre el backend local.
+- test/backend/supabase_backend_sweep_test.dart: PostgREST/GoTrue simulado en 19
+  modos de respuesta sobre todas las rutas/verbos + barrido de mutaciones
+  (supabase_backend_client 86 % -> 99 %).
+- test/backend/supabase_backend_edge_test.dart: registro, reset 5xx, limites
+  /me, filtros de listado, subida de archivos 413/415/500/exito.
+Frontend:
+- test/app/router_routes_test.dart, home_menu_navigation_test.dart: todas las
+  rutas, callbacks de pantallas, menu lateral, logout, seguimiento, edicion.
+- test/features/users/roles_screen_full_test.dart: roles y permisos.
+- test/features/payments/exchange_inventory_full_test.dart: tasas e inventario.
+- test/features/list_screens_common_test.dart: 6 listados (error, reintento,
+  paginacion, busqueda, refresco, vacio).
+- test/features/orders/export_history_full_test.dart, export_dossier_full_test.dart,
+  export_registration_full_test.dart; operations/shipments_full_test.dart.
+- test/features/auth_forms_errors_test.dart, forms_errors_test.dart:
+  confirmar correo, olvido/restablecer clave, login, envio, notificaciones,
+  perfil, formularios de producto y finca.
+- test/features/orders_lots_extra_test.dart: registro de pedido (lineas,
+  duplicados, errores), formulario de lote, cartera de pagos.
+- test/backend/local_backend_gaps_test.dart: filtros de listados, inventario,
+  validaciones de productos/fincas/proveedores/clientes, usuarios y roles
+  (protecciones de administrador), edicion de pedidos, obligaciones demo y JSON
+  invalido en el backend local.
+
+
+4. COBERTURA POR ARCHIVO (de menor a mayor)
+------------------------------------------------------------------------------
+TOTAL 10261 10499 97.7
+ 91.9   125/  136 lib/features/farms/presentation/farms_map_screen.dart
+ 92.1    35/   38 lib/app/app.dart
+ 92.1   234/  254 lib/features/users/presentation/users_screen.dart
+ 92.4   122/  132 lib/features/customers/presentation/customer_accounts_screen.dart
+ 92.9   158/  170 lib/backend/local_exports_store.dart
+ 93.2    55/   59 lib/features/farms/presentation/location_picker_screen.dart
+ 94.2   161/  171 lib/features/users/presentation/user_edit_screen.dart
+ 94.3   215/  228 lib/features/farms/presentation/farm_list_screen.dart
+ 94.4   235/  249 lib/features/customers/presentation/customer_list_screen.dart
+ 94.4   152/  161 lib/features/users/presentation/user_registration_screen.dart
+ 94.5   103/  109 lib/features/customers/presentation/customer_history_screen.dart
+ 95.0   152/  160 lib/features/orders/presentation/export_dossier_screen.dart
+ 95.1   137/  144 lib/features/customers/presentation/customer_form_screen.dart
+ 95.5   253/  265 lib/features/payments/presentation/payment_portfolio_screen.dart
+ 95.6   766/  801 lib/app/router/app_router.dart
+ 95.8   273/  285 lib/features/products/presentation/product_catalog_screen.dart
+ 96.2   125/  130 lib/features/suppliers/presentation/supplier_form_screen.dart
+ 96.7   206/  213 lib/features/farms/presentation/farm_form_screen.dart
+ 97.0    65/   67 lib/backend/local_inventory_store.dart
+ 97.3   110/  113 lib/features/orders/presentation/order_list_screen.dart
+ 97.7    86/   88 lib/features/orders/presentation/eudr_declaration_screen.dart
+ 98.1    51/   52 lib/features/auth/state/auth_session.dart
+ 98.2   215/  219 lib/backend/local_origin_store.dart
+ 98.4   180/  183 lib/backend/local_customers_store.dart
+ 98.4   370/  376 lib/backend/local_backend_store.dart
+ 98.7   235/  238 lib/backend/local_products_store.dart
+ 98.8   170/  172 lib/features/orders/presentation/export_registration_screen.dart
+ 99.0   104/  105 lib/features/orders/presentation/export_history_screen.dart
+ 99.1   209/  211 lib/features/roles/presentation/roles_screen.dart
+ 99.1   107/  108 lib/features/logistics/presentation/shipment_form_screen.dart
+ 99.1   215/  217 lib/features/suppliers/presentation/supplier_list_screen.dart
+ 99.2   255/  257 lib/features/products/presentation/product_form_screen.dart
+ 99.3   135/  136 lib/backend/local_suppliers_store.dart
+ 99.4   168/  169 lib/features/logistics/presentation/shipment_timeline_screen.dart
+ 99.4   169/  170 lib/backend/local_orders_store.dart
+ 99.6   281/  282 lib/features/farms/presentation/lot_screens.dart
+ 99.9  1353/ 1355 lib/backend/supabase_backend_client.dart
+100.0   105/  105 lib/core/api/api_client.dart
+100.0    73/   73 lib/features/auth/presentation/confirm_email_screen.dart
+100.0    73/   73 lib/features/auth/presentation/forgot_password_screen.dart
+100.0   159/  159 lib/features/auth/presentation/login_screen.dart
+100.0    79/   79 lib/features/home/presentation/demo_dashboard.dart
+100.0    20/   20 lib/app/router/modal_form_page.dart
+100.0    97/   97 lib/features/auth/presentation/reset_password_screen.dart
+100.0   186/  186 lib/features/profile/presentation/profile_screen.dart
+100.0   195/  195 lib/features/orders/presentation/order_registration_screen.dart
+100.0   142/  142 lib/features/inventory/presentation/inventory_screen.dart
+100.0   143/  143 lib/features/logistics/presentation/shipment_list_screen.dart
+100.0   103/  103 lib/features/notifications/presentation/notification_center_screen.dart
+100.0   143/  143 lib/features/payments/presentation/exchange_rates_screen.dart
+100.0     8/    8 lib/core/validation/password_policy.dart
+100.0     4/    4 lib/core/api/api_exception.dart
+100.0    16/   16 lib/core/validation/eori.dart
+100.0     4/    4 lib/features/logistics/shipment_status.dart
+100.0    29/   29 lib/features/roles/presentation/role_create_dialog.dart
+100.0     3/    3 lib/core/roles/role_labels.dart
+100.0   402/  402 lib/backend/local_backend_client.dart
+100.0   269/  269 lib/backend/local_demo_store.dart
+100.0    18/   18 lib/core/config/api_config.dart
+100.0     5/    5 lib/app/state/app_preferences.dart
+
+5. INVENTARIO DE ARCHIVOS DE PRUEBA (conteo estatico; las pruebas parametrizadas
+   generan mas casos en ejecucion: total real 474)
+------------------------------------------------------------------------------
+2 test/app/app_router_test.dart
+4 test/app/home_menu_navigation_test.dart
+2 test/app/home_permissions_test.dart
+3 test/app/home_sidebar_test.dart
+3 test/app/router_routes_test.dart
+6 test/app/widget_test.dart
+14 test/backend/local_backend_auth_users_test.dart
+4 test/backend/local_backend_gaps_test.dart
+2 test/backend/local_backend_orders_exports_test.dart
+5 test/backend/local_backend_products_test.dart
+4 test/backend/local_backend_validation_fuzz_test.dart
+4 test/backend/local_demo_test.dart
+5 test/backend/supabase_backend_edge_test.dart
+3 test/backend/supabase_backend_sweep_test.dart
+35 test/backend/supabase_backend_test.dart
+22 test/backend/supabase_epics_7_11_test.dart
+7 test/core/api_client_test.dart
+19 test/core/core_extra_test.dart
+4 test/features/auth/auth_session_test.dart
+1 test/features/auth/confirm_email_screen_test.dart
+3 test/features/auth/login_screen_test.dart
+4 test/features/auth/recovery_screens_test.dart
+9 test/features/auth_forms_errors_test.dart
+22 test/features/customers/customer_links_test.dart
+25 test/features/customers/customers_test.dart
+25 test/features/farms/farms_lots_test.dart
+13 test/features/farms/farms_map_test.dart
+14 test/features/farms/location_picker_test.dart
+7 test/features/forms_errors_test.dart
+8 test/features/list_screens_common_test.dart
+23 test/features/operations/epics_7_11_screens_test.dart
+8 test/features/operations/shipments_full_test.dart
+3 test/features/orders/eudr_declaration_screen_test.dart
+7 test/features/orders/export_dossier_full_test.dart
+6 test/features/orders/export_history_full_test.dart
+1 test/features/orders/export_history_screen_test.dart
+5 test/features/orders/export_registration_full_test.dart
+3 test/features/orders/export_registration_screen_test.dart
+5 test/features/orders/order_list_screen_test.dart
+2 test/features/orders/order_registration_screen_test.dart
+9 test/features/orders_lots_extra_test.dart
+11 test/features/payments/exchange_inventory_full_test.dart
+5 test/features/products/product_form_screen_test.dart
+6 test/features/products/product_screens_test.dart
+2 test/features/products/products_flow_test.dart
+22 test/features/suppliers/suppliers_test.dart
+6 test/features/users/profile_screen_test.dart
+5 test/features/users/roles_screen_full_test.dart
+1 test/features/users/roles_screen_test.dart
+6 test/features/users/user_edit_screen_test.dart
+4 test/features/users/user_registration_screen_test.dart
+6 test/features/users/users_screen_test.dart
+
+6. HALLAZGOS / DEFECTOS (los tres fueron CORREGIDOS)
+------------------------------------------------------------------------------
+QA-01 (SQL, pruebas obsoletas) - CORREGIDO: verify_schema.sql esperaba 17/9
+      permisos para comercial/logistica; la migracion 20261107000100
+      (roles por modulo) define 15/11. Se actualizo la prueba; resultado: 0 fallas.
+      draft_export_traceability.sql se conserva sin cambios: es una prueba de
+      borrador que se invalida por diseno cuando existen las tablas reales; su
+      cobertura real esta en exports_shipments.sql.
+QA-02 (UI) - CORREGIDO: InventoryScreen._adjust liberaba el TextEditingController
+      antes de terminar la animacion de cierre del dialogo. Ahora el valor se
+      lee con onChanged y no hay controller que liberar. Se agregaron pruebas de
+      ajuste exitoso, valor invalido y errores de API/genericos.
+QA-03 (UI) - CORREGIDO: LoginScreen desbordaba 111 px a 900 px de ancho
+      (_OriginLine). El texto "Mercados globales" ahora es Flexible con elipsis.
+      La prueba de login usa 900 px.
+
+7. LINEAS NO CUBIERTAS (238 de 10499)
+------------------------------------------------------------------------------
+- No cubribles: throw bajo kReleaseMode en app.dart, rutas con constantes de
+  compilacion (supabaseConfigured), http.Client por defecto; main.dart nunca
+  se importa en pruebas.
+- Pendientes (ver seccion 4): ramas de validacion en stores locales
+  (local_backend_store, local_origin_store, local_products_store, etc.) y
+  detalles de pantallas (users_screen, farms_map, customer_*, product_catalog).
+
+8. COMO REPRODUCIR
+------------------------------------------------------------------------------
+  flutter test --coverage                 (aprox. 10 min por fuzz y sweep)
+  SQL: docker exec -i qa_pg psql -U qa -d riexport_qa < database/tests/<script>.sql
+==============================================================================

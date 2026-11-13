@@ -466,9 +466,12 @@ class _OriginLine extends StatelessWidget {
       SizedBox(width: 15),
       Icon(Icons.public_outlined, color: Color(0xFFD1DCD4), size: 19),
       SizedBox(width: 8),
-      Text(
-        'Mercados globales',
-        style: TextStyle(color: Color(0xFFD1DCD4), fontSize: 13),
+      Flexible(
+        child: Text(
+          'Mercados globales',
+          overflow: TextOverflow.ellipsis,
+          style: TextStyle(color: Color(0xFFD1DCD4), fontSize: 13),
+        ),
       ),
     ],
   );

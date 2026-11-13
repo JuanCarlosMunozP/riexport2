@@ -1,0 +1,199 @@
+psql:database/drafts/domain_policies.sql:66: NOTICE:  policy "customer_order_select" for relation "public.customer_order" does not exist, skipping
+psql:database/drafts/domain_policies.sql:69: NOTICE:  policy "customer_order_insert" for relation "public.customer_order" does not exist, skipping
+psql:database/drafts/domain_policies.sql:72: NOTICE:  policy "customer_order_update" for relation "public.customer_order" does not exist, skipping
+psql:database/drafts/domain_policies.sql:78: NOTICE:  policy "order_line_select" for relation "public.order_line" does not exist, skipping
+psql:database/drafts/domain_policies.sql:81: NOTICE:  policy "order_line_insert" for relation "public.order_line" does not exist, skipping
+psql:database/drafts/domain_policies.sql:85: NOTICE:  policy "order_line_update" for relation "public.order_line" does not exist, skipping
+psql:database/drafts/domain_policies.sql:90: NOTICE:  policy "order_line_delete" for relation "public.order_line" does not exist, skipping
+psql:database/drafts/domain_policies.sql:105: NOTICE:  policy "export_select" for relation "public.export" does not exist, skipping
+psql:database/drafts/domain_policies.sql:108: NOTICE:  policy "export_insert" for relation "public.export" does not exist, skipping
+psql:database/drafts/domain_policies.sql:111: NOTICE:  policy "export_update" for relation "public.export" does not exist, skipping
+psql:database/drafts/domain_policies.sql:117: NOTICE:  policy "export_line_select" for relation "public.export_line" does not exist, skipping
+psql:database/drafts/domain_policies.sql:120: NOTICE:  policy "export_line_insert" for relation "public.export_line" does not exist, skipping
+psql:database/drafts/domain_policies.sql:124: NOTICE:  policy "export_line_update" for relation "public.export_line" does not exist, skipping
+psql:database/drafts/domain_policies.sql:129: NOTICE:  policy "export_line_delete" for relation "public.export_line" does not exist, skipping
+psql:database/drafts/domain_policies.sql:134: NOTICE:  policy "export_document_select" for relation "public.export_document" does not exist, skipping
+psql:database/drafts/domain_policies.sql:137: NOTICE:  policy "export_document_insert" for relation "public.export_document" does not exist, skipping
+psql:database/drafts/domain_policies.sql:144: NOTICE:  policy "stored_file_select" for relation "public.stored_file" does not exist, skipping
+psql:database/drafts/domain_policies.sql:148: NOTICE:  policy "stored_file_insert" for relation "public.stored_file" does not exist, skipping
+psql:database/drafts/domain_policies.sql:167: NOTICE:  policy "inventory_movement_select" for relation "public.inventory_movement" does not exist, skipping
+psql:database/drafts/domain_policies.sql:170: NOTICE:  policy "inventory_movement_insert" for relation "public.inventory_movement" does not exist, skipping
+psql:database/drafts/domain_policies.sql:176: NOTICE:  policy "payment_obligation_select" for relation "public.payment_obligation" does not exist, skipping
+psql:database/drafts/domain_policies.sql:179: NOTICE:  policy "payment_obligation_insert" for relation "public.payment_obligation" does not exist, skipping
+psql:database/drafts/domain_policies.sql:183: NOTICE:  policy "payment_transaction_select" for relation "public.payment_transaction" does not exist, skipping
+psql:database/drafts/domain_policies.sql:186: NOTICE:  policy "payment_transaction_insert" for relation "public.payment_transaction" does not exist, skipping
+psql:database/drafts/domain_policies.sql:193: NOTICE:  policy "exchange_rate_select" for relation "public.exchange_rate" does not exist, skipping
+psql:database/drafts/domain_policies.sql:211: NOTICE:  policy "shipment_select" for relation "public.shipment" does not exist, skipping
+psql:database/drafts/domain_policies.sql:214: NOTICE:  policy "shipment_insert" for relation "public.shipment" does not exist, skipping
+psql:database/drafts/domain_policies.sql:217: NOTICE:  policy "shipment_update" for relation "public.shipment" does not exist, skipping
+psql:database/drafts/domain_policies.sql:224: NOTICE:  policy "shipment_event_select" for relation "public.shipment_event" does not exist, skipping
+psql:database/drafts/domain_policies.sql:227: NOTICE:  policy "shipment_event_insert" for relation "public.shipment_event" does not exist, skipping
+psql:database/drafts/domain_policies.sql:232: NOTICE:  policy "notification_select" for relation "public.notification" does not exist, skipping
+psql:database/drafts/domain_policies.sql:235: NOTICE:  policy "notification_update" for relation "public.notification" does not exist, skipping
+psql:database/drafts/client_isolation.sql:64: NOTICE:  policy "customer_select_own" for relation "public.customer" does not exist, skipping
+psql:database/drafts/client_isolation.sql:69: NOTICE:  policy "customer_order_select_own" for relation "public.customer_order" does not exist, skipping
+psql:database/drafts/client_isolation.sql:74: NOTICE:  policy "order_line_select_own" for relation "public.order_line" does not exist, skipping
+psql:database/drafts/client_isolation.sql:79: NOTICE:  policy "export_select_own" for relation "public.export" does not exist, skipping
+psql:database/drafts/client_isolation.sql:84: NOTICE:  policy "export_line_select_own" for relation "public.export_line" does not exist, skipping
+psql:database/drafts/client_isolation.sql:89: NOTICE:  policy "export_document_select_own" for relation "public.export_document" does not exist, skipping
+psql:database/drafts/client_isolation.sql:94: NOTICE:  policy "shipment_select_own" for relation "public.shipment" does not exist, skipping
+psql:database/drafts/client_isolation.sql:99: NOTICE:  policy "shipment_event_select_own" for relation "public.shipment_event" does not exist, skipping
+        tabla        |   op   | A admin | C comercial | L logistico | K cliente 
+---------------------+--------+---------+-------------+-------------+-----------
+ customer            | select | no      | no          | no          | no
+ customer            | insert | no      | no          | no          | no
+ customer            | update | no      | no          | no          | no
+ customer            | delete | no      | no          | no          | no
+ customer_order      | select | no      | no          | no          | no
+ customer_order      | insert | no      | no          | no          | no
+ customer_order      | update | no      | no          | no          | no
+ customer_order      | delete | no      | no          | no          | no
+ customer_user       | select | no      | no          | no          | SI
+ customer_user       | insert | no      | no          | no          | no
+ customer_user       | update | no      | no          | no          | no
+ customer_user       | delete | no      | no          | no          | no
+ exchange_rate       | select | no      | no          | no          | no
+ exchange_rate       | insert | no      | no          | no          | no
+ exchange_rate       | update | no      | no          | no          | no
+ exchange_rate       | delete | no      | no          | no          | no
+ export              | select | no      | no          | no          | no
+ export              | insert | no      | no          | no          | no
+ export              | update | no      | no          | no          | no
+ export              | delete | no      | no          | no          | no
+ export_document     | select | no      | no          | no          | no
+ export_document     | insert | no      | no          | no          | no
+ export_document     | update | no      | no          | no          | no
+ export_document     | delete | no      | no          | no          | no
+ export_line         | select | no      | no          | no          | no
+ export_line         | insert | no      | no          | no          | no
+ export_line         | update | no      | no          | no          | no
+ export_line         | delete | no      | no          | no          | no
+ inventory_movement  | select | no      | no          | no          | no
+ inventory_movement  | insert | no      | no          | no          | no
+ inventory_movement  | update | no      | no          | no          | no
+ inventory_movement  | delete | no      | no          | no          | no
+ notification        | select | SI      | SI          | SI          | SI
+ notification        | insert | no      | no          | no          | no
+ notification        | update | SI      | SI          | SI          | SI
+ notification        | delete | no      | no          | no          | no
+ order_line          | select | no      | no          | no          | no
+ order_line          | insert | no      | no          | no          | no
+ order_line          | update | no      | no          | no          | no
+ order_line          | delete | no      | no          | no          | no
+ payment_obligation  | select | no      | no          | no          | no
+ payment_obligation  | insert | no      | no          | no          | no
+ payment_obligation  | update | no      | no          | no          | no
+ payment_obligation  | delete | no      | no          | no          | no
+ payment_transaction | select | no      | no          | no          | no
+ payment_transaction | insert | no      | no          | no          | no
+ payment_transaction | update | no      | no          | no          | no
+ payment_transaction | delete | no      | no          | no          | no
+ shipment            | select | no      | no          | no          | no
+ shipment            | insert | no      | no          | no          | no
+ shipment            | update | no      | no          | no          | no
+ shipment            | delete | no      | no          | no          | no
+ shipment_event      | select | no      | no          | no          | no
+ shipment_event      | insert | no      | no          | no          | no
+ shipment_event      | update | no      | no          | no          | no
+ shipment_event      | delete | no      | no          | no          | no
+ stored_file         | select | no      | no          | no          | no
+ stored_file         | insert | SI      | SI          | SI          | SI
+ stored_file         | update | no      | no          | no          | no
+ stored_file         | delete | no      | no          | no          | no
+(60 rows)
+
+           seccion           | rol |        tabla        |   op   | real | esperado 
+-----------------------------+-----+---------------------+--------+------+----------
+ DIFERENCIAS CON LO ESPERADO | A   | customer            | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | C   | customer            | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | K   | customer            | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | L   | customer            | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | customer_order      | insert | no   | SI
+ DIFERENCIAS CON LO ESPERADO | C   | customer_order      | insert | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | customer_order      | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | C   | customer_order      | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | K   | customer_order      | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | L   | customer_order      | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | customer_order      | update | no   | SI
+ DIFERENCIAS CON LO ESPERADO | C   | customer_order      | update | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | customer_user       | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | C   | customer_user       | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | L   | customer_user       | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | exchange_rate       | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | C   | exchange_rate       | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | export              | insert | no   | SI
+ DIFERENCIAS CON LO ESPERADO | C   | export              | insert | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | export              | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | C   | export              | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | K   | export              | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | L   | export              | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | export              | update | no   | SI
+ DIFERENCIAS CON LO ESPERADO | C   | export              | update | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | export_document     | insert | no   | SI
+ DIFERENCIAS CON LO ESPERADO | C   | export_document     | insert | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | export_document     | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | C   | export_document     | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | K   | export_document     | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | L   | export_document     | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | export_line         | delete | no   | SI
+ DIFERENCIAS CON LO ESPERADO | C   | export_line         | delete | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | export_line         | insert | no   | SI
+ DIFERENCIAS CON LO ESPERADO | C   | export_line         | insert | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | export_line         | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | C   | export_line         | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | K   | export_line         | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | L   | export_line         | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | export_line         | update | no   | SI
+ DIFERENCIAS CON LO ESPERADO | C   | export_line         | update | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | inventory_movement  | insert | no   | SI
+ DIFERENCIAS CON LO ESPERADO | L   | inventory_movement  | insert | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | inventory_movement  | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | C   | inventory_movement  | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | L   | inventory_movement  | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | order_line          | delete | no   | SI
+ DIFERENCIAS CON LO ESPERADO | C   | order_line          | delete | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | order_line          | insert | no   | SI
+ DIFERENCIAS CON LO ESPERADO | C   | order_line          | insert | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | order_line          | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | C   | order_line          | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | K   | order_line          | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | L   | order_line          | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | order_line          | update | no   | SI
+ DIFERENCIAS CON LO ESPERADO | C   | order_line          | update | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | payment_obligation  | insert | no   | SI
+ DIFERENCIAS CON LO ESPERADO | C   | payment_obligation  | insert | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | payment_obligation  | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | C   | payment_obligation  | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | payment_transaction | insert | no   | SI
+ DIFERENCIAS CON LO ESPERADO | C   | payment_transaction | insert | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | payment_transaction | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | C   | payment_transaction | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | shipment            | insert | no   | SI
+ DIFERENCIAS CON LO ESPERADO | L   | shipment            | insert | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | shipment            | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | C   | shipment            | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | K   | shipment            | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | L   | shipment            | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | shipment            | update | no   | SI
+ DIFERENCIAS CON LO ESPERADO | L   | shipment            | update | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | shipment_event      | insert | no   | SI
+ DIFERENCIAS CON LO ESPERADO | L   | shipment_event      | insert | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | shipment_event      | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | C   | shipment_event      | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | K   | shipment_event      | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | L   | shipment_event      | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | A   | stored_file         | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | C   | stored_file         | select | no   | SI
+ DIFERENCIAS CON LO ESPERADO | L   | stored_file         | select | no   | SI
+(81 rows)
+
+ celdas | coinciden | diferencias 
+--------+-----------+-------------
+    240 |       159 |          81
+(1 row)
+
+ permisos_de_negocio_en_roles_reales_tras_rollback 
+---------------------------------------------------
+                                                 0
+(1 row)
+

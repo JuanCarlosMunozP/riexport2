@@ -1,0 +1,619 @@
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000e1","role":"authenticated"}
+(1 row)
+
+ create_supplier 
+-----------------
+               7
+(1 row)
+
+ create_farm 
+-------------
+          13
+(1 row)
+
+ create_product 
+----------------
+             10
+(1 row)
+
+ create_lot 
+------------
+          4
+(1 row)
+
+ adjust_lot_inventory 
+----------------------
+                    1
+(1 row)
+
+ create_customer 
+-----------------
+              17
+(1 row)
+
+ create_customer 
+-----------------
+              18
+(1 row)
+
+ link_customer_user 
+--------------------
+ 
+(1 row)
+
+ link_customer_user 
+--------------------
+ 
+(1 row)
+
+                                                                    create_customer_order                                                                     
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+ {"id": 1, "status": "draft", "created_at": "2026-11-13T03:29:44.293308+00:00", "customer_id": 17, "order_number": "PED-2026-000001", "currency_code": "USD"}
+(1 row)
+
+                                               transition_customer_order                                               
+-----------------------------------------------------------------------------------------------------------------------
+ {"id": 1, "status": "confirmed", "updated_at": "2026-11-13T03:29:44.293308+00:00", "order_number": "PED-2026-000001"}
+(1 row)
+
+                                                      create_customer_export                                                       
+-----------------------------------------------------------------------------------------------------------------------------------
+ {"id": 1, "status": "draft", "order_id": 1, "export_date": "2026-11-13", "incoterm_code": null, "destination_country_code": "US"}
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ adjust_lot_inventory 
+----------------------
+                    3
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ adjust_lot_inventory 
+----------------------
+                    4
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000e1","role":"authenticated"}
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000e2","role":"authenticated"}
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000e1","role":"authenticated"}
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000e2","role":"authenticated"}
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000e1","role":"authenticated"}
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000e3","role":"authenticated"}
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000e4","role":"authenticated"}
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000e1","role":"authenticated"}
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000e3","role":"authenticated"}
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ n | prueba | resultado 
+---+--------+-----------
+(0 rows)
+
+ fallas | pruebas 
+--------+---------
+      0 |      98
+(1 row)
+

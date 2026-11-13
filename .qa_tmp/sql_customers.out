@@ -1,0 +1,419 @@
+ check 
+-------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000c3","role":"authenticated"}
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000c4","role":"authenticated"}
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000c1","role":"authenticated"}
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ set_config 
+------------
+ {}
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000c1","role":"authenticated"}
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000c2","role":"authenticated"}
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ set_config 
+------------
+ {}
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ n | prueba | resultado 
+---+--------+-----------
+(0 rows)
+
+ fallas | pruebas 
+--------+---------
+      0 |      74
+(1 row)
+
+ clientes_tras_rollback 
+------------------------
+                      0
+(1 row)
+

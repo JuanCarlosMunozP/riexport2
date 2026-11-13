@@ -1,0 +1,282 @@
+psql:database/drafts/domain_policies.sql:66: NOTICE:  policy "customer_order_select" for relation "public.customer_order" does not exist, skipping
+psql:database/drafts/domain_policies.sql:69: NOTICE:  policy "customer_order_insert" for relation "public.customer_order" does not exist, skipping
+psql:database/drafts/domain_policies.sql:72: NOTICE:  policy "customer_order_update" for relation "public.customer_order" does not exist, skipping
+psql:database/drafts/domain_policies.sql:78: NOTICE:  policy "order_line_select" for relation "public.order_line" does not exist, skipping
+psql:database/drafts/domain_policies.sql:81: NOTICE:  policy "order_line_insert" for relation "public.order_line" does not exist, skipping
+psql:database/drafts/domain_policies.sql:85: NOTICE:  policy "order_line_update" for relation "public.order_line" does not exist, skipping
+psql:database/drafts/domain_policies.sql:90: NOTICE:  policy "order_line_delete" for relation "public.order_line" does not exist, skipping
+psql:database/drafts/domain_policies.sql:105: NOTICE:  policy "export_select" for relation "public.export" does not exist, skipping
+psql:database/drafts/domain_policies.sql:108: NOTICE:  policy "export_insert" for relation "public.export" does not exist, skipping
+psql:database/drafts/domain_policies.sql:111: NOTICE:  policy "export_update" for relation "public.export" does not exist, skipping
+psql:database/drafts/domain_policies.sql:117: NOTICE:  policy "export_line_select" for relation "public.export_line" does not exist, skipping
+psql:database/drafts/domain_policies.sql:120: NOTICE:  policy "export_line_insert" for relation "public.export_line" does not exist, skipping
+psql:database/drafts/domain_policies.sql:124: NOTICE:  policy "export_line_update" for relation "public.export_line" does not exist, skipping
+psql:database/drafts/domain_policies.sql:129: NOTICE:  policy "export_line_delete" for relation "public.export_line" does not exist, skipping
+psql:database/drafts/domain_policies.sql:134: NOTICE:  policy "export_document_select" for relation "public.export_document" does not exist, skipping
+psql:database/drafts/domain_policies.sql:137: NOTICE:  policy "export_document_insert" for relation "public.export_document" does not exist, skipping
+psql:database/drafts/domain_policies.sql:144: NOTICE:  policy "stored_file_select" for relation "public.stored_file" does not exist, skipping
+psql:database/drafts/domain_policies.sql:148: NOTICE:  policy "stored_file_insert" for relation "public.stored_file" does not exist, skipping
+psql:database/drafts/domain_policies.sql:167: NOTICE:  policy "inventory_movement_select" for relation "public.inventory_movement" does not exist, skipping
+psql:database/drafts/domain_policies.sql:170: NOTICE:  policy "inventory_movement_insert" for relation "public.inventory_movement" does not exist, skipping
+psql:database/drafts/domain_policies.sql:176: NOTICE:  policy "payment_obligation_select" for relation "public.payment_obligation" does not exist, skipping
+psql:database/drafts/domain_policies.sql:179: NOTICE:  policy "payment_obligation_insert" for relation "public.payment_obligation" does not exist, skipping
+psql:database/drafts/domain_policies.sql:183: NOTICE:  policy "payment_transaction_select" for relation "public.payment_transaction" does not exist, skipping
+psql:database/drafts/domain_policies.sql:186: NOTICE:  policy "payment_transaction_insert" for relation "public.payment_transaction" does not exist, skipping
+psql:database/drafts/domain_policies.sql:193: NOTICE:  policy "exchange_rate_select" for relation "public.exchange_rate" does not exist, skipping
+psql:database/drafts/domain_policies.sql:211: NOTICE:  policy "shipment_select" for relation "public.shipment" does not exist, skipping
+psql:database/drafts/domain_policies.sql:214: NOTICE:  policy "shipment_insert" for relation "public.shipment" does not exist, skipping
+psql:database/drafts/domain_policies.sql:217: NOTICE:  policy "shipment_update" for relation "public.shipment" does not exist, skipping
+psql:database/drafts/domain_policies.sql:224: NOTICE:  policy "shipment_event_select" for relation "public.shipment_event" does not exist, skipping
+psql:database/drafts/domain_policies.sql:227: NOTICE:  policy "shipment_event_insert" for relation "public.shipment_event" does not exist, skipping
+psql:database/drafts/domain_policies.sql:232: NOTICE:  policy "notification_select" for relation "public.notification" does not exist, skipping
+psql:database/drafts/domain_policies.sql:235: NOTICE:  policy "notification_update" for relation "public.notification" does not exist, skipping
+psql:database/drafts/client_isolation.sql:64: NOTICE:  policy "customer_select_own" for relation "public.customer" does not exist, skipping
+psql:database/drafts/client_isolation.sql:69: NOTICE:  policy "customer_order_select_own" for relation "public.customer_order" does not exist, skipping
+psql:database/drafts/client_isolation.sql:74: NOTICE:  policy "order_line_select_own" for relation "public.order_line" does not exist, skipping
+psql:database/drafts/client_isolation.sql:79: NOTICE:  policy "export_select_own" for relation "public.export" does not exist, skipping
+psql:database/drafts/client_isolation.sql:84: NOTICE:  policy "export_line_select_own" for relation "public.export_line" does not exist, skipping
+psql:database/drafts/client_isolation.sql:89: NOTICE:  policy "export_document_select_own" for relation "public.export_document" does not exist, skipping
+psql:database/drafts/client_isolation.sql:94: NOTICE:  policy "shipment_select_own" for relation "public.shipment" does not exist, skipping
+psql:database/drafts/client_isolation.sql:99: NOTICE:  policy "shipment_event_select_own" for relation "public.shipment_event" does not exist, skipping
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000b1","role":"authenticated"}
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000b2","role":"authenticated"}
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000b3","role":"authenticated"}
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000b4","role":"authenticated"}
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000b5","role":"authenticated"}
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000b6","role":"authenticated"}
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ n  |                      prueba                      | resultado 
+----+--------------------------------------------------+-----------
+  1 | A ve solo su cliente                             | OK
+  2 | A ve solo sus pedidos (O1, O3)                   | OK
+  3 | A no ve el pedido de otro cliente                | OK
+  4 | A ve las lineas de sus pedidos                   | OK
+  5 | A ve solo su exportacion (E1)                    | OK
+  6 | A ve las lineas y documentos de su exportacion   | OK
+  7 | A ve solo su envio (S1)                          | OK
+  8 | A ve los eventos de su envio (2)                 | OK
+  9 | A no ve pagos                                    | OK
+ 10 | A no ve inventario                               | OK
+ 11 | A ve solo su vinculo                             | OK
+ 12 | A no crea pedidos                                | OK
+ 13 | A no edita sus pedidos                           | OK
+ 14 | A no borra pedidos                               | OK
+ 15 | A no se vincula a otro cliente                   | OK
+ 16 | A no desvincula                                  | OK
+ 17 | A (tras intentar desvincular) conserva su acceso | OK
+ 18 | B ve solo su cliente                             | OK
+ 19 | B ve solo su pedido (O2)                         | OK
+ 20 | B ve solo su exportacion y envio                 | OK
+ 21 | B ve solo el evento de su envio                  | OK
+ 22 | con portal.read pero sin vinculo: no ve pedidos  | OK
+ 23 | con portal.read pero sin vinculo: no ve envios   | OK
+ 24 | vinculado pero sin portal.read: no ve pedidos    | OK
+ 25 | vinculado pero sin portal.read: no ve su cliente | OK
+ 26 | desactivado y vinculado: no ve pedidos           | OK
+ 27 | desactivado y vinculado: no ve envios            | OK
+ 28 | personal interno: sigue viendo todos los pedidos | OK
+ 29 | personal interno: sigue viendo todos los envios  | OK
+ 30 | personal interno: ve todos los vinculos          | OK
+ 31 | personal sin customers.update no vincula a nadie | OK
+ 32 | anonimo no lee el vinculo                        | OK
+ 33 | anonimo no ejecuta las funciones auxiliares      | OK
+(33 rows)
+
+ fallas | pruebas 
+--------+---------
+      0 |      33
+(1 row)
+
+ tablas_de_prueba_tras_rollback 
+--------------------------------
+                              0
+(1 row)
+

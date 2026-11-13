@@ -1,0 +1,621 @@
+ check 
+-------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000e3","role":"authenticated"}
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000e2","role":"authenticated"}
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000e1","role":"authenticated"}
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000e4","role":"authenticated"}
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ set_config 
+------------
+ {}
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ check 
+-------
+ 
+(1 row)
+
+ n  |                                prueba                                | resultado 
+----+----------------------------------------------------------------------+-----------
+  1 | semilla: 2 unidades de medida (kg, t)                                | OK
+  2 | semilla: 3 certificaciones base activas                              | OK
+  3 | sin permisos: ve las unidades (catalogo de referencia)               | OK
+  4 | sin permisos: ve las certificaciones                                 | OK
+  5 | sin permisos: no ve productos                                        | OK
+  6 | sin permisos: el catalogo no devuelve nada                           | OK
+  7 | sin permisos: no crea productos                                      | OK
+  8 | lectura: no crea productos                                           | OK
+  9 | lectura: no edita productos                                          | OK
+ 10 | lectura: no inactiva productos                                       | OK
+ 11 | lectura: no asocia certificaciones                                   | OK
+ 12 | cafe valido con certificaciones                                      | OK
+ 13 | cafe valido minimo (sin HS, umbral ni certificaciones)               | OK
+ 14 | duplicado (mismo tipo, variedad y calidad sin distinguir mayusculas) | OK
+ 15 | el mismo nombre en otro tipo no es duplicado                         | OK
+ 16 | tipo invalido                                                        | OK
+ 17 | falta la variedad                                                    | OK
+ 18 | falta la calidad                                                     | OK
+ 19 | falta la humedad del cafe                                            | OK
+ 20 | humedad fuera de rango (101)                                         | OK
+ 21 | humedad negativa                                                     | OK
+ 22 | humedad que no es numero                                             | OK
+ 23 | unidad base inexistente                                              | OK
+ 24 | codigo HS con formato invalido                                       | OK
+ 25 | umbral negativo                                                      | OK
+ 26 | campos de cacao en un cafe se rechazan                               | OK
+ 27 | campo desconocido se rechaza                                         | OK
+ 28 | certificacion inexistente                                            | OK
+ 29 | certificacion inactiva no se asigna al crear                         | OK
+ 30 | certificaciones duplicadas                                           | OK
+ 31 | atomicidad: los intentos fallidos no dejaron productos a medias      | OK
+ 32 | cacao valido                                                         | OK
+ 33 | falta el tipo de grano del cacao                                     | OK
+ 34 | falta la fermentacion del cacao                                      | OK
+ 35 | fermentacion fuera de rango (100.5)                                  | OK
+ 36 | humedad en un cacao se rechaza                                       | OK
+ 37 | catalogo: 4 productos creados                                        | OK
+ 38 | catalogo: filtra por tipo cafe                                       | OK
+ 39 | catalogo: filtra por tipo cacao                                      | OK
+ 40 | catalogo: filtra por certificacion (organico)                        | OK
+ 41 | catalogo: busca por calidad (sin distinguir mayusculas)              | OK
+ 42 | catalogo: muestra las certificaciones como lista con nombre          | OK
+ 43 | catalogo: trae la unidad base y los atributos del tipo               | OK
+ 44 | catalogo: el cafe trae humedad y no atributos de cacao               | OK
+ 45 | edita calidad y umbral                                               | OK
+ 46 | la edicion se refleja en el catalogo                                 | OK
+ 47 | edita la humedad del cafe                                            | OK
+ 48 | edita el detalle del cacao                                           | OK
+ 49 | borra el codigo HS con null                                          | OK
+ 50 | no cambia el tipo                                                    | OK
+ 51 | no cambia la unidad base                                             | OK
+ 52 | enviar el mismo tipo y unidad es valido                              | OK
+ 53 | un cafe no admite campos de cacao                                    | OK
+ 54 | un cacao no admite humedad                                           | OK
+ 55 | humedad invalida al editar                                           | OK
+ 56 | la edicion no puede duplicar otro producto                           | OK
+ 57 | producto inexistente                                                 | OK
+ 58 | edicion vacia                                                        | OK
+ 59 | inactiva un producto                                                 | OK
+ 60 | el producto inactivo sigue consultable en el catalogo                | OK
+ 61 | catalogo: filtra solo activos                                        | OK
+ 62 | reactiva el producto                                                 | OK
+ 63 | inactivar un producto inexistente                                    | OK
+ 64 | reemplaza las certificaciones de un producto                         | OK
+ 65 | queda con 2 certificaciones                                          | OK
+ 66 | quita todas las certificaciones                                      | OK
+ 67 | queda sin certificaciones                                            | OK
+ 68 | certificaciones duplicadas al asociar                                | OK
+ 69 | certificacion inexistente al asociar                                 | OK
+ 70 | una certificacion inactiva no se asigna de nuevo                     | OK
+ 71 | asociar a un producto inexistente                                    | OK
+ 72 | no se inserta directo en product                                     | OK
+ 73 | no se actualiza directo product                                      | OK
+ 74 | no se borra directo product (privilegio)                             | OK
+ 75 | no se escribe directo en certification                               | OK
+ 76 | no se escribe directo en el detalle                                  | OK
+ 77 | la vista de catalogo no admite escrituras                            | OK
+ 78 | desactivado (con permisos): no ve el catalogo                        | OK
+ 79 | desactivado: no ve ni las unidades                                   | OK
+ 80 | desactivado: no crea productos                                       | OK
+ 81 | anonimo no lee productos                                             | OK
+ 82 | anonimo no lee el catalogo                                           | OK
+ 83 | anonimo no ejecuta create_product                                    | OK
+ 84 | anonimo no lee las certificaciones                                   | OK
+ 85 | nadie borra productos (ni el propietario)                            | OK
+ 86 | nadie borra detalles (ni el propietario)                             | OK
+ 87 | el tipo no cambia ni por SQL                                         | OK
+ 88 | la unidad no cambia ni por SQL                                       | OK
+ 89 | el detalle debe corresponder al tipo (cacao con detalle de cafe)     | OK
+ 90 | un producto sin detalle falla al cerrar la transaccion               | OK
+ 91 | un cacao sin detalle falla al cerrar la transaccion                  | OK
+ 92 | CHECK de la base: humedad fuera de rango por SQL                     | OK
+ 93 | auditoria: registra creaciones                                       | OK
+ 94 | auditoria: registra ediciones con los campos cambiados               | OK
+ 95 | auditoria: registra inactivacion y reactivacion                      | OK
+ 96 | auditoria: registra el cambio de certificaciones                     | OK
+ 97 | auditoria: no registra intentos rechazados ni datos personales       | OK
+(97 rows)
+
+ fallas | pruebas 
+--------+---------
+      0 |      97
+(1 row)
+
+ productos_tras_rollback 
+-------------------------
+                       0
+(1 row)
+

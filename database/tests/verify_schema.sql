@@ -59,22 +59,23 @@ begin
   select count(*) into n from public.role_permission rp join public.role r on r.id = rp.role_id
    where r.name = 'encargado_logistico'
      and rp.permission_code in ('customers.read','orders.read','exports.read','documents.read',
-                                'inventory.read','inventory.adjust','logistics.read',
+                                'documents.upload','products.read','lots.read',
+                                'inventory.read','logistics.read',
                                 'logistics.create','logistics.update');
-  insert into chk values ('semilla', 'logística tiene solo los 9 permisos operativos definidos',
-    n = 9 and (select count(*) from public.role_permission rp join public.role r on r.id = rp.role_id
-                where r.name = 'encargado_logistico') = 9, n::text);
+  insert into chk values ('semilla', 'logística tiene solo los 11 permisos operativos definidos (roles por modulo)',
+    n = 11 and (select count(*) from public.role_permission rp join public.role r on r.id = rp.role_id
+                where r.name = 'encargado_logistico') = 11, n::text);
 
   select count(*) into n from public.role_permission rp join public.role r on r.id = rp.role_id
    where r.name = 'usuario_comercial'
      and rp.permission_code in ('customers.read','customers.create','customers.update',
        'orders.read','orders.create','orders.update','orders.transition',
-       'exports.read','exports.create','exports.update',
-       'documents.read','documents.upload','documents.generate',
-       'inventory.read','payments.read','payments.create','logistics.read');
-  insert into chk values ('semilla', 'comercial tiene los 17 permisos comerciales definidos',
-    n = 17 and (select count(*) from public.role_permission rp join public.role r on r.id = rp.role_id
-                where r.name = 'usuario_comercial') = 17, n::text);
+       'exports.read','exports.create',
+       'documents.read','documents.generate',
+       'products.read','inventory.read','payments.read','logistics.read');
+  insert into chk values ('semilla', 'comercial tiene los 15 permisos comerciales definidos (roles por modulo)',
+    n = 15 and (select count(*) from public.role_permission rp join public.role r on r.id = rp.role_id
+                where r.name = 'usuario_comercial') = 15, n::text);
 
   -- 3. RLS y políticas -----------------------------------------------------------
   foreach t in array array['role','permission','role_permission','profile','audit_log','unit_of_measure','certification','product','coffee_detail','cacao_detail','product_certification','customer','customer_user','customer_order','order_line','inventory_movement','export','export_line','export_destination','incoterm','shipment','shipment_event','stored_file','export_document','notification','payment_obligation','payment_transaction','exchange_rate'] loop
