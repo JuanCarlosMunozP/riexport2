@@ -1,0 +1,107 @@
+CREATE TABLE
+DO
+    seccion    |                                 comprobacion                                 | resultado |                   detalle                    
+---------------+------------------------------------------------------------------------------+-----------+----------------------------------------------
+ funciones     | 38 funciones SECURITY DEFINER con search_path fijo                           | OK        | 38
+ pedidos       | RLS habilitado en cabecera y lineas                                          | OK        | 2
+ pedidos       | RPC de edición solo para authenticated                                       | OK        | 0
+ pedidos       | RPC de registro solo para authenticated                                      | OK        | 0
+ pedidos       | RPC de transicion solo para authenticated                                    | OK        | 0
+ pedidos       | historial de estado con RLS                                                  | OK        | 
+ pedidos       | indices por cliente y por pedido/lote                                        | OK        | 
+ pedidos       | permisos de lectura, registro, edición y transicion                          | OK        | 4
+ pedidos       | tablas de pedidos sin escritura directa ni acceso anonimo                    | OK        | 0
+ pedidos       | vista de pedidos con datos relacionados y permiso de lectura                 | OK        | 
+ privilegios   | UPDATE en profile solo en columnas editables                                 | OK        | first_name,is_active,last_name,phone,role_id
+ privilegios   | anon sin privilegios en public                                               | OK        | 0
+ privilegios   | audit_log: solo SELECT para authenticated, nada para anon                    | OK        | 0
+ privilegios   | authenticated sin INSERT/DELETE en profile                                   | OK        | 0
+ privilegios   | authenticated sin escritura en permission/role_permission                    | OK        | 0
+ privilegios   | exportaciones solo se crean por RPC transaccional                            | OK        | 0
+ privilegios   | sin TRUNCATE/REFERENCES/TRIGGER para authenticated ni anon (H1)              | OK        | 0
+ productos     | indice unico de identidad del producto                                       | OK        | 
+ productos     | las 4 funciones de escritura: authenticated si, anon no                      | OK        | 0
+ productos     | product_catalog es security_invoker                                          | OK        | 
+ productos     | semilla: 2 unidades y 3 certificaciones base                                 | OK        | 5
+ productos     | tablas y vista de productos: solo SELECT para authenticated, nada para anon  | OK        | 0
+ restricciones | CHECK en public (mínimo: 41)                                                 | OK        | 100
+ restricciones | UNIQUE en profile.auth_user_id                                               | OK        | 
+ restricciones | UNIQUE en profile.email                                                      | OK        | 
+ restricciones | UNIQUE en role.name                                                          | OK        | 
+ restricciones | claves foráneas en public (mínimo: 15)                                       | OK        | 50
+ restricciones | índice profile_role_id_idx                                                   | OK        | 
+ rls           | RLS activa en public.audit_log                                               | OK        | 
+ rls           | RLS activa en public.cacao_detail                                            | OK        | 
+ rls           | RLS activa en public.certification                                           | OK        | 
+ rls           | RLS activa en public.coffee_detail                                           | OK        | 
+ rls           | RLS activa en public.customer                                                | OK        | 
+ rls           | RLS activa en public.customer_order                                          | OK        | 
+ rls           | RLS activa en public.customer_user                                           | OK        | 
+ rls           | RLS activa en public.exchange_rate                                           | OK        | 
+ rls           | RLS activa en public.export                                                  | OK        | 
+ rls           | RLS activa en public.export_destination                                      | OK        | 
+ rls           | RLS activa en public.export_document                                         | OK        | 
+ rls           | RLS activa en public.export_line                                             | OK        | 
+ rls           | RLS activa en public.incoterm                                                | OK        | 
+ rls           | RLS activa en public.inventory_movement                                      | OK        | 
+ rls           | RLS activa en public.notification                                            | OK        | 
+ rls           | RLS activa en public.order_line                                              | OK        | 
+ rls           | RLS activa en public.payment_obligation                                      | OK        | 
+ rls           | RLS activa en public.payment_transaction                                     | OK        | 
+ rls           | RLS activa en public.permission                                              | OK        | 
+ rls           | RLS activa en public.product                                                 | OK        | 
+ rls           | RLS activa en public.product_certification                                   | OK        | 
+ rls           | RLS activa en public.profile                                                 | OK        | 
+ rls           | RLS activa en public.role                                                    | OK        | 
+ rls           | RLS activa en public.role_permission                                         | OK        | 
+ rls           | RLS activa en public.shipment                                                | OK        | 
+ rls           | RLS activa en public.shipment_event                                          | OK        | 
+ rls           | RLS activa en public.stored_file                                             | OK        | 
+ rls           | RLS activa en public.unit_of_measure                                         | OK        | 
+ rls           | RLS activa en storage.objects                                                | OK        | 
+ rls           | ninguna política abierta a anon/public                                       | OK        | 0
+ rls           | políticas en public (mínimo: 20)                                             | OK        | 56
+ rls           | políticas en storage.objects (mínimo: 6)                                     | OK        | 7
+ rls           | toda politica exige permiso o cuenta activa                                  | OK        | 0
+ semilla       | 10 permisos base                                                             | OK        | 10
+ semilla       | 4 roles base                                                                 | OK        | 4
+ semilla       | administrador tiene todos los permisos                                       | OK        | 43
+ semilla       | cliente solo tiene portal.read                                               | OK        | 1
+ semilla       | comercial tiene los 15 permisos comerciales definidos (roles por modulo)     | OK        | 15
+ semilla       | logística tiene solo los 11 permisos operativos definidos (roles por modulo) | OK        | 11
+ storage       | 2 buckets privados                                                           | OK        | 2
+ tablas        | existe public.audit_log                                                      | OK        | 
+ tablas        | existe public.cacao_detail                                                   | OK        | 
+ tablas        | existe public.certification                                                  | OK        | 
+ tablas        | existe public.coffee_detail                                                  | OK        | 
+ tablas        | existe public.customer                                                       | OK        | 
+ tablas        | existe public.customer_order                                                 | OK        | 
+ tablas        | existe public.customer_user                                                  | OK        | 
+ tablas        | existe public.exchange_rate                                                  | OK        | 
+ tablas        | existe public.export                                                         | OK        | 
+ tablas        | existe public.export_destination                                             | OK        | 
+ tablas        | existe public.export_document                                                | OK        | 
+ tablas        | existe public.export_line                                                    | OK        | 
+ tablas        | existe public.incoterm                                                       | OK        | 
+ tablas        | existe public.inventory_movement                                             | OK        | 
+ tablas        | existe public.notification                                                   | OK        | 
+ tablas        | existe public.order_line                                                     | OK        | 
+ tablas        | existe public.payment_obligation                                             | OK        | 
+ tablas        | existe public.payment_transaction                                            | OK        | 
+ tablas        | existe public.permission                                                     | OK        | 
+ tablas        | existe public.product                                                        | OK        | 
+ tablas        | existe public.product_certification                                          | OK        | 
+ tablas        | existe public.profile                                                        | OK        | 
+ tablas        | existe public.role                                                           | OK        | 
+ tablas        | existe public.role_permission                                                | OK        | 
+ tablas        | existe public.shipment                                                       | OK        | 
+ tablas        | existe public.shipment_event                                                 | OK        | 
+ tablas        | existe public.stored_file                                                    | OK        | 
+ tablas        | existe public.unit_of_measure                                                | OK        | 
+ triggers      | 32 triggers de reglas y dominio                                              | OK        | 32
+ vista         | 3 indices de busqueda (pg_trgm)                                              | OK        | 3
+ vista         | admin_user_list existe con security_invoker                                  | OK        | 
+ vista         | admin_user_list: solo SELECT para authenticated, nada para anon              | OK        | 0
+(100 rows)
+
+DO

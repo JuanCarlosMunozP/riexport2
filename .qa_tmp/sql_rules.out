@@ -1,0 +1,514 @@
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000c1","role":"authenticated"}
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000a1","role":"authenticated"}
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000c2","role":"authenticated"}
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000c3","role":"authenticated"}
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000c4","role":"authenticated"}
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ set_config 
+------------
+ {}
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000c4","role":"authenticated"}
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000a1","role":"authenticated"}
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000c1","role":"authenticated"}
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000a2","role":"authenticated"}
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000c3","role":"authenticated"}
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+                              set_config                               
+-----------------------------------------------------------------------
+ {"sub":"00000000-0000-0000-0000-0000000000c1","role":"authenticated"}
+(1 row)
+
+ rows 
+------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ attempt 
+---------
+ 
+(1 row)
+
+ n  |                                          prueba                                          | resultado 
+----+------------------------------------------------------------------------------------------+-----------
+  1 | registro: el rol pedido en los metadatos se ignora (cliente)                             | OK
+  2 | current_user_role(): cliente                                                             | OK
+  3 | vista de administracion: el cliente ve solo su fila                                      | OK
+  4 | cliente ve solo su propio perfil                                                         | OK
+  5 | cliente no edita perfiles ajenos                                                         | OK
+  6 | cliente edita su propio nombre y telefono (autoedicion)                                  | OK
+  7 | cliente no cambia su propio rol                                                          | OK
+  8 | cliente no se reactiva ni desactiva a si mismo                                           | OK
+  9 | nadie edita el correo por UPDATE directo                                                 | OK
+ 10 | no se cambia auth_user_id desde la autoedicion                                           | OK
+ 11 | cliente no crea roles                                                                    | OK
+ 12 | cliente no asigna permisos a roles                                                       | OK
+ 13 | cliente puede leer el catalogo de roles                                                  | OK
+ 14 | cliente no puede insertar en permission                                                  | OK
+ 15 | cliente no puede insertar en profile                                                     | OK
+ 16 | current_user_role(): administrador                                                       | OK
+ 17 | administrador recibe los permisos agregados al catalogo                                  | OK
+ 18 | vista de administracion: el admin ve todos, con el nombre del rol                        | OK
+ 19 | admin ve todos los perfiles de prueba                                                    | OK
+ 20 | admin edita el telefono de otro usuario                                                  | OK
+ 21 | admin no puede cambiar auth_user_id (columna sin privilegio)                             | OK
+ 22 | admin no se desactiva a si mismo                                                         | OK
+ 23 | admin desactiva a otro administrador (queda uno)                                         | OK
+ 24 | admin no cambia su propio rol (aunque tenga el permiso)                                  | OK
+ 25 | admin crea un rol                                                                        | OK
+ 26 | el nombre de rol invalido se rechaza                                                     | OK
+ 27 | el nombre de rol duplicado se rechaza                                                    | OK
+ 28 | admin asigna permisos a un rol (atomico)                                                 | OK
+ 29 | los permisos quedaron asignados                                                          | OK
+ 30 | permisos duplicados se rechazan                                                          | OK
+ 31 | permisos inexistentes se rechazan                                                        | OK
+ 32 | el administrador conserva sus permisos de gestion                                        | OK
+ 33 | se puede desactivar un rol sin usuarios activos                                          | OK
+ 34 | no se asigna un rol inactivo                                                             | OK
+ 35 | no se renombra el rol administrador                                                      | OK
+ 36 | no se desactiva el rol administrador                                                     | OK
+ 37 | no se desactiva un rol con usuarios activos                                              | OK
+ 38 | users.read+update: edita el telefono de otro                                             | OK
+ 39 | users.read+update: no asigna roles (H2)                                                  | OK
+ 40 | users.read+update: no se asigna rol a si mismo (H2)                                      | OK
+ 41 | users.read+update: no desactiva usuarios                                                 | OK
+ 42 | users.read+deactivate: no edita nombres ajenos                                           | OK
+ 43 | users.read+deactivate: desactiva a otro                                                  | OK
+ 44 | users.read+assign_role: cambia el rol de otro                                            | OK
+ 45 | users.read+assign_role: no deja al sistema sin administrador activo                      | OK
+ 46 | users.read+assign_role: no edita nombres ajenos                                          | OK
+ 47 | assign_role sin ser administrador: no promueve a administrador                           | OK
+ 48 | assign_role sin ser administrador: no degrada a un administrador                         | OK
+ 49 | sin permiso audit.read: no ve la auditoria                                               | OK
+ 50 | un administrador si promueve a otro usuario a administrador                              | OK
+ 51 | un administrador si degrada a otro administrador                                         | OK
+ 52 | auditoria: el administrador (audit.read) la consulta                                     | OK
+ 53 | auditoria: nadie escribe desde la API (INSERT)                                           | OK
+ 54 | auditoria: nadie edita desde la API (UPDATE)                                             | OK
+ 55 | auditoria: nadie borra desde la API (DELETE)                                             | OK
+ 56 | auditoria: el cambio hecho por c4 queda con actor, rol origen y destino                  | OK
+ 57 | auditoria: el intento rechazado de promocion no deja registro (solo la promocion valida) | OK
+ 58 | auditoria: los cambios hechos por SQL (sin sesion) quedan con actor nulo                 | OK
+ 59 | auditoria: no guarda datos personales (solo ids y nombres de rol)                        | OK
+ 60 | auditoria inmutable: ni el propietario la edita                                          | OK
+ 61 | auditoria inmutable: ni el propietario la borra                                          | OK
+ 62 | auditoria inmutable: ni el propietario la vacia                                          | OK
+ 63 | borrar una cuenta con auditoria conserva el registro (actor nulo)                        | OK
+ 64 | auditoria: tras borrar la cuenta del actor sus registros siguen, con actor nulo          | OK
+ 65 | desactivar veta la cuenta en Auth (banned_until)                                         | OK
+ 66 | desactivar revoca las sesiones de Auth                                                   | OK
+ 67 | current_user_role(): desactivado devuelve nulo                                           | OK
+ 68 | desactivado: la vista de administracion no devuelve nada                                 | OK
+ 69 | desactivado: no ve su propio perfil                                                      | OK
+ 70 | desactivado: no lee roles                                                                | OK
+ 71 | desactivado: no lee permisos                                                             | OK
+ 72 | desactivado: no lee role_permission                                                      | OK
+ 73 | desactivado: no edita su propio perfil                                                   | OK
+ 74 | desactivado: no sube archivos a su carpeta                                               | OK
+ 75 | administrador desactivado: no lee roles ni usuarios                                      | OK
+ 76 | administrador desactivado: no ve perfiles ajenos                                         | OK
+ 77 | administrador desactivado: no crea roles                                                 | OK
+ 78 | reactivar a un usuario                                                                   | OK
+ 79 | reactivar quita el veto de Auth                                                          | OK
+ 80 | reactivado: vuelve a ver su perfil                                                       | OK
+ 81 | anonimo no puede ejecutar current_user_role()                                            | OK
+ 82 | anonimo no lee la vista de administracion                                                | OK
+ 83 | anonimo no lee la auditoria                                                              | OK
+ 84 | anonimo no lee perfiles                                                                  | OK
+ 85 | anonimo no lee roles                                                                     | OK
+(85 rows)
+
+ fallas | pruebas 
+--------+---------
+      0 |      85
+(1 row)
+
+ usuarios_de_prueba_tras_rollback 
+----------------------------------
+                                0
+(1 row)
+

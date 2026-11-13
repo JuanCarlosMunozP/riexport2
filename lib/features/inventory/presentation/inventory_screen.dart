@@ -71,13 +71,14 @@ class _InventoryScreenState extends State<InventoryScreen> {
   }
 
   Future<void> _adjust(Map<String, dynamic> lot) async {
-    final controller = TextEditingController();
+    var text = '';
     final delta = await showDialog<num>(
       context: context,
       builder: (context) => AlertDialog(
         title: Text('Ajustar ${lot['lot_code']}'),
         content: TextField(
-          controller: controller,
+          autofocus: true,
+          onChanged: (value) => text = value,
           keyboardType: const TextInputType.numberWithOptions(
             decimal: true,
             signed: true,
@@ -95,9 +96,7 @@ class _InventoryScreenState extends State<InventoryScreen> {
           ),
           FilledButton(
             onPressed: () {
-              final value = num.tryParse(
-                controller.text.trim().replaceAll(',', '.'),
-              );
+              final value = num.tryParse(text.trim().replaceAll(',', '.'));
               if (value != null && value != 0) Navigator.pop(context, value);
             },
             child: const Text('Guardar'),
@@ -105,7 +104,6 @@ class _InventoryScreenState extends State<InventoryScreen> {
         ],
       ),
     );
-    controller.dispose();
     if (delta == null) return;
     try {
       await widget.adjustInventory(lot['id'] as int, delta);
