@@ -270,3 +270,11 @@ LIMITACIONES
     hay que reconstruirlo para que la lleve.
   - No se repitio la suite completa de 487 pruebas tras QA-04; solo la de
     pedidos (32/32).
+
+11. SUITE AUTOMATIZADA COMPLETA TRAS TODOS LOS CAMBIOS (2026-11-15)
+------------------------------------------------------------------------------
+Comando: flutter test --coverage        Duracion: 3 min 03 s
+Resultado: 487 de 487 pruebas aprobadas, 0 fallos.
+Cobertura de lineas: 97.7 % (10340 de 10580; quedan 240 sin cubrir).
+Incluye la correccion QA-04 (desplegables de Registrar exportacion).
+Pruebas en dispositivo (seccion 10): 6/6. Total ejecutado: 493 pruebas.
