@@ -22,6 +22,8 @@ dev_dependencies:
   postgres: ^3.5.0
   flutter_test:
     sdk: flutter
+  integration_test:
+    sdk: flutter
   flutter_lints: ^6.0.0
 
 flutter:

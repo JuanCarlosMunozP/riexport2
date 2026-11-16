@@ -5,6 +5,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 import '../../../core/api/api_client.dart';
 import '../../../core/api/api_exception.dart';
+import '../../../core/security/security.dart';
 
 abstract interface class SessionTokenStore {
   Future<String?> readToken();
@@ -14,7 +15,15 @@ abstract interface class SessionTokenStore {
 
 class SecureSessionTokenStore implements SessionTokenStore {
   SecureSessionTokenStore({FlutterSecureStorage? storage})
-    : _storage = storage ?? const FlutterSecureStorage();
+    : _storage =
+          storage ??
+          const FlutterSecureStorage(
+            // M9: el token solo es legible tras el primer desbloqueo y nunca
+            // sale del dispositivo (ni en copias de seguridad).
+            iOptions: IOSOptions(
+              accessibility: KeychainAccessibility.first_unlock_this_device,
+            ),
+          );
 
   static const _tokenKey = 'access_token';
   final FlutterSecureStorage _storage;
@@ -31,8 +40,11 @@ class SecureSessionTokenStore implements SessionTokenStore {
 }
 
 class AuthSession extends ChangeNotifier {
-  AuthSession({SessionTokenStore? tokenStore})
-    : _tokenStore = tokenStore ?? SecureSessionTokenStore();
+  AuthSession({SessionTokenStore? tokenStore, LoginThrottle? throttle})
+    : _tokenStore = tokenStore ?? SecureSessionTokenStore(),
+      _throttle = throttle ?? LoginThrottle();
+
+  final LoginThrottle _throttle;
 
   final SessionTokenStore _tokenStore;
   String? _accessToken;
@@ -64,10 +76,28 @@ class AuthSession extends ChangeNotifier {
     required String email,
     required String password,
   }) async {
-    final response = await apiClient.post(
-      '/auth/login',
-      body: {'email': email.trim(), 'password': password},
-    );
+    if (_throttle.isLocked) {
+      throw ApiException(
+        statusCode: 429,
+        code: 'TOO_MANY_ATTEMPTS',
+        message:
+            'Demasiados intentos fallidos. Espera ${_throttle.secondsRemaining} '
+            's antes de volver a intentarlo.',
+      );
+    }
+    final Object? response;
+    try {
+      response = await apiClient.post(
+        '/auth/login',
+        body: {'email': email.trim(), 'password': password},
+      );
+    } on ApiException catch (error) {
+      final status = error.statusCode;
+      if (status == 400 || status == 401 || status == 403 || status == 422) {
+        _throttle.recordFailure();
+      }
+      rethrow;
+    }
     if (response is! Map<String, dynamic> ||
         response['access_token'] is! String ||
         (response['access_token'] as String).isEmpty ||
@@ -81,6 +111,7 @@ class AuthSession extends ChangeNotifier {
       );
     }
     final accessToken = response['access_token'] as String;
+    _throttle.recordSuccess();
     await _tokenStore.writeToken(accessToken);
     _accessToken = accessToken;
     _expired = false;

@@ -208,3 +208,65 @@ QA-03 (UI) - CORREGIDO: LoginScreen desbordaba 111 px a 900 px de ancho
   flutter test --coverage                 (aprox. 10 min por fuzz y sweep)
   SQL: docker exec -i qa_pg psql -U qa -d riexport_qa < database/tests/<script>.sql
 ==============================================================================
+
+9. ENDURECIMIENTO DE SEGURIDAD (OWASP Mobile Top 10)
+------------------------------------------------------------------------------
+Detalle de controles: docs/seguridad-movil.md. Pruebas: test/core/security_test.dart
+(13 pruebas). Suite completa tras los cambios: 487 pruebas, todas aprobadas.
+- M1: claves por --dart-define, firma release por key.properties, secretos en .gitignore.
+- M3: no se envia un JWT vencido; freno de login (5 fallos -> 30 s).
+- M4: saneo de caracteres de control/bidi en cuerpos salientes; limite de 10 MB por respuesta.
+- M5: HTTPS obligatorio; Android sin trafico en claro; iOS ATS; enlaces externos solo HTTPS.
+- M6: FLAG_SECURE en release; logs solo en debug y con datos redactados.
+- M7: R8 + ofuscacion Dart (tool/build_release.ps1).
+- M8/M9: sin backups, token solo en Keychain/Keystore.
+No verificado en este entorno: compilacion Android/iOS con los nuevos ajustes de
+Gradle, manifiesto y Info.plist (probar con tool/build_release.ps1).
+Pendiente recomendado: certificate pinning y deteccion de root/jailbreak.
+
+==============================================================================
+
+10. PRUEBAS DE INTEGRACION Y FUNCIONALES EN DISPOSITIVO REAL
+------------------------------------------------------------------------------
+Fecha: 2026-11-15
+Dispositivo: Huawei LNA-LX3 (Android, id AP7FJV6323H04841), build debug.
+Archivo: integration_test/app_flow_test.dart (dependencia dev: integration_test).
+Backend: LocalBackendClient en memoria. NO se uso Supabase ni datos reales.
+Ejecucion: flutter test integration_test -d <id-del-celular>
+
+Resultado final: 6 de 6 aprobadas (tras corregir 1 defecto de la app).
+
+  IT-01 Login con credenciales invalidas no entra a la app ............ OK
+  IT-02 Login admin, menu completo (perfil, usuarios, roles) y cierre
+        de sesion que borra el token ................................. OK
+  IT-03 Registro de cliente publico y permisos restringidos (no ve
+        Usuarios ni Roles) ........................................... OK
+  IT-04 Las 15 opciones del menu abren su pantalla sin excepciones
+        (Drawer de movil, desplazamiento y toque real) ............... OK
+  IT-05 Recuperar acceso: codigo invalido es rechazado ................ OK
+  IT-06 Seguridad: 5 intentos fallidos bloquean el login (429) ........ OK
+
+Historial de corridas (6 vueltas)
+  1-4: fallos de las pruebas, no de la app. En el celular el menu esta dentro
+       de un Drawer (en pantalla ancha es barra fija) y la lista es perezosa;
+       las pruebas se adaptaron para abrir el panel, desplazarse y centrar el
+       elemento antes de tocarlo.
+  5:   IT-04 detecto un DEFECTO REAL (ver abajo).
+  6:   6/6 aprobadas tras la correccion.
+
+DEFECTO ENCONTRADO Y CORREGIDO
+  QA-04  Pantalla "Registrar exportacion": RenderFlex desbordado 58 px a la
+         derecha en un celular. Los desplegables de pedido, pais e incoterm no
+         usaban isExpanded, y textos largos (p. ej. "CIF · Cost, Insurance and
+         Freight") superaban el ancho.
+         Correccion: isExpanded: true y overflow ellipsis en los tres
+         desplegables (lib/features/orders/presentation/
+         export_registration_screen.dart). Suite test/features/orders: 32/32.
+
+LIMITACIONES
+  - Las pruebas en dispositivo requieren pantalla encendida y desbloqueada.
+  - No se probo contra Supabase real (evita escribir en datos de produccion).
+  - El APK instalado en el celular se compilo ANTES de la correccion QA-04;
+    hay que reconstruirlo para que la lleve.
+  - No se repitio la suite completa de 487 pruebas tras QA-04; solo la de
+    pedidos (32/32).

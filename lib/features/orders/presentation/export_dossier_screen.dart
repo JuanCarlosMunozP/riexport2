@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../core/api/api_exception.dart';
+import '../../../core/security/security.dart';
 
 /// Archivo elegido por la persona usuaria para adjuntar al expediente.
 class PickedDocument {
@@ -28,8 +29,8 @@ Future<PickedDocument?> _pickDocument() async {
 
 Future<void> _openUrl(String url) async {
   final uri = Uri.tryParse(url);
-  if (uri == null ||
-      !await launchUrl(uri, mode: LaunchMode.externalApplication)) {
+  if (!isSafeExternalUri(uri) ||
+      !await launchUrl(uri!, mode: LaunchMode.externalApplication)) {
     throw StateError('No se pudo abrir el enlace.');
   }
 }

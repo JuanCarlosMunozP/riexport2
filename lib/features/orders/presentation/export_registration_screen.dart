@@ -200,6 +200,7 @@ class _ExportRegistrationScreenState extends State<ExportRegistrationScreen> {
               children: [
                 DropdownButtonFormField<int>(
                   key: const Key('export-order'),
+                  isExpanded: true,
                   initialValue: _orderId,
                   decoration: const InputDecoration(
                     labelText: 'Pedido confirmado',
@@ -227,6 +228,7 @@ class _ExportRegistrationScreenState extends State<ExportRegistrationScreen> {
                 const SizedBox(height: 12),
                 DropdownButtonFormField<String>(
                   key: const Key('export-destination'),
+                  isExpanded: true,
                   initialValue: _destinationCode,
                   decoration: const InputDecoration(
                     labelText: 'País de destino',
@@ -236,7 +238,10 @@ class _ExportRegistrationScreenState extends State<ExportRegistrationScreen> {
                     for (final destination in _destinations)
                       DropdownMenuItem(
                         value: destination['code'] as String,
-                        child: Text('${destination['name']}'),
+                        child: Text(
+                          '${destination['name']}',
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ),
                   ],
                   onChanged: _saving
@@ -248,6 +253,7 @@ class _ExportRegistrationScreenState extends State<ExportRegistrationScreen> {
                 const SizedBox(height: 12),
                 DropdownButtonFormField<String?>(
                   key: const Key('export-incoterm'),
+                  isExpanded: true,
                   initialValue: _incotermCode,
                   decoration: const InputDecoration(
                     labelText: 'Incoterm (opcional)',
@@ -261,7 +267,10 @@ class _ExportRegistrationScreenState extends State<ExportRegistrationScreen> {
                     for (final item in _incoterms)
                       DropdownMenuItem(
                         value: item['code'] as String,
-                        child: Text('${item['code']} · ${item['name']}'),
+                        child: Text(
+                          '${item['code']} · ${item['name']}',
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ),
                   ],
                   onChanged: _saving

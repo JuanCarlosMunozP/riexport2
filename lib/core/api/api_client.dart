@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 import '../config/api_config.dart';
+import '../security/security.dart';
 import 'api_exception.dart';
 
 class ApiClient {
@@ -27,6 +28,9 @@ class ApiClient {
   /// (sesión vencida o revocada). No se invoca en el inicio de sesión.
   final void Function()? _onUnauthorized;
   int _requestSequence = 0;
+
+  /// Tamaño máximo aceptado para una respuesta (defensa ante cuerpos enormes).
+  static const maxResponseBytes = 10 * 1024 * 1024;
 
   Future<Object?> get(String path, {Map<String, String>? queryParameters}) =>
       _send('GET', path, queryParameters: queryParameters);
@@ -69,6 +73,19 @@ class ApiClient {
       'X-Request-ID': requestId,
     };
     final token = _tokenProvider?.call();
+    if (token != null &&
+        token.isNotEmpty &&
+        signalUnauthorized &&
+        isJwtExpired(token.replaceFirst(RegExp(r'^Bearer\s+'), ''))) {
+      // M3: nunca se envía un token vencido; se cierra la sesión localmente.
+      _onUnauthorized?.call();
+      throw ApiException(
+        statusCode: 401,
+        code: 'SESSION_EXPIRED',
+        message: 'Tu sesión expiró. Inicia sesión de nuevo.',
+        requestId: requestId,
+      );
+    }
     if (token != null && token.isNotEmpty) {
       headers['Authorization'] = token.startsWith('Bearer ')
           ? token
@@ -83,13 +100,21 @@ class ApiClient {
       method,
       config.resolve(path, queryParameters: queryParameters),
     )..headers.addAll(headers);
-    if (body != null) request.body = jsonEncode(body);
+    if (body != null) request.body = jsonEncode(sanitizeJson(body));
 
     try {
       final responseFuture = _client
           .send(request)
           .then(http.Response.fromStream);
       final response = await responseFuture.timeout(config.timeout);
+      if (response.bodyBytes.length > maxResponseBytes) {
+        throw ApiException(
+          statusCode: response.statusCode,
+          code: 'INVALID_RESPONSE',
+          message: 'El servidor devolvió una respuesta no válida.',
+          requestId: requestId,
+        );
+      }
       try {
         return _parseResponse(response, requestId);
       } on ApiException catch (error) {

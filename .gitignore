@@ -52,3 +52,12 @@ app.*.map.json
 credenciales.txt
 .certs-local/
 iniciar_app_https.txt
+
+# Firma y secretos (M1): jamás en git
+android/key.properties
+*.jks
+*.keystore
+*.p12
+*.pem
+*.key
+.env*

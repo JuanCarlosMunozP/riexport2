@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/api/api_exception.dart';
+import '../../../core/security/security.dart';
 import '../shipment_status.dart';
 import 'shipment_list_screen.dart' show showShipmentStatusDialog;
 
@@ -58,7 +59,10 @@ class _ShipmentTimelineScreenState extends State<ShipmentTimelineScreen> {
     } on ApiException catch (error) {
       if (mounted) setState(() => _error = error.message);
     } catch (error, stack) {
-      debugPrint('Seguimiento del envío ${widget.shipmentId}: $error\n$stack');
+      if (kDebugMode) {
+        // M6: solo en depuración y sin datos sensibles.
+        debugPrint(redactSensitive('Seguimiento del envío: $error\n$stack'));
+      }
       if (mounted) {
         setState(
           () => _error = kDebugMode
